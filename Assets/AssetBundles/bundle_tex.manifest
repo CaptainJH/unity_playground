@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2253794987
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0b8285e44a0d41105d9b6e870e727270
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f19fbf085e00d23fbc8d6cf7b345590b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/Scenes/Floor4.png
+Dependencies: []

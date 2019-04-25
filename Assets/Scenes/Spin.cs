@@ -7,16 +7,16 @@ public class Spin : MonoBehaviour {
 
     public float speed = 1.0f;
 
-    public string bundleFolderName = "AssetBundles";
-    public string bundleName = "bundle0";
+    private string bundleFolderName = "AssetBundles";
+    private string bundleName = "bundle_tex";
 
     // Use this for initialization
     void Start()
     {
-        var tex = LoadAndInstantiateFromAssetBundleLoadFromFile();
+        //var tex = LoadAndInstantiateFromAssetBundleLoadFromFile();
 
-        Renderer renderer = GetComponent<Renderer>();
-        renderer.material.mainTexture = tex;
+        //Renderer renderer = GetComponent<Renderer>();
+        //renderer.material.mainTexture = tex;
     }
 
     // Update is called once per frame

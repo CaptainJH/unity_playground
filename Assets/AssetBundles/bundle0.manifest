@@ -1,16 +1,53 @@
 ManifestFileVersion: 0
-CRC: 125975184
+CRC: 3103158598
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1e8d8be33ba990721423441fddd84430
+    Hash: a5f49f735f580abae381f6f1553fb3b1
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f19fbf085e00d23fbc8d6cf7b345590b
+    Hash: 01439c26b7abee7ec407751cdbe0e894
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
   Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 637879aef874c774e825821d43aa849f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 143
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 258
+  Script: {instanceID: 0}
 Assets:
-- Assets/Scenes/Floor4.png
-Dependencies: []
+- Assets/Scenes/SampleScene.unity
+Dependencies:
+- C:/Users/heqi/Documents/unity_playground/Assets/AssetBundles/bundle_tex
