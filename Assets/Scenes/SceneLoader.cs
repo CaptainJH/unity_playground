@@ -9,14 +9,16 @@ public class SceneLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         LoadTextureBundle();
-        LoadSceneBundle();
+        //LoadSceneBundle();
+
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown("space") && myLoadedAssetBundle)
         {
-            myLoadedAssetBundle.Unload(false);
+            myLoadedAssetBundle.Unload(true);
             Debug.Log("Asset bundle unloaded");
         }
 	}

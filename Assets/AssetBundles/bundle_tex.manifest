@@ -1,16 +1,33 @@
 ManifestFileVersion: 0
-CRC: 2253794987
+CRC: 20557375
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0b8285e44a0d41105d9b6e870e727270
+    Hash: 8c58d26617db6488cd48e09487b9071a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f19fbf085e00d23fbc8d6cf7b345590b
+    Hash: 9b4f1593cdf7a1ab33da9444111cb398
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
   Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
 Assets:
+- Assets/Scenes/Bjursta.FBX
 - Assets/Scenes/Floor4.png
+- Assets/Scenes/Materials/Floor4.mat
+- Assets/Scenes/Materials/Floor5.mat
 Dependencies: []
