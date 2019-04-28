@@ -8,10 +8,10 @@ public class SceneLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        LoadTextureBundle();
-        //LoadSceneBundle();
+        //LoadTextureBundle();
+        LoadSceneBundle();
 
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
     }
 	
 	// Update is called once per frame

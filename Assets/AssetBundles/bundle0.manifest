@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 648858149
+CRC: 30968078
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 56a0cbb137a0186597e91353b435c6a7
+    Hash: 86bf5398088a2e16a9a8c3020859269a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 01439c26b7abee7ec407751cdbe0e894
@@ -49,5 +49,4 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Scenes/SampleScene.unity
-Dependencies:
-- C:/Users/heqi/Documents/unity_playground/Assets/AssetBundles/bundle_tex
+Dependencies: []
