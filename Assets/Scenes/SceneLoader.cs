@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //LoadTextureBundle();
+        //LoadAssetsBundle();
         LoadSceneBundle();
 
         //SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
@@ -25,14 +25,14 @@ public class SceneLoader : MonoBehaviour {
 
     private string bundleFolderName = "AssetBundles";
     private string bundleSceneName = "bundle0";
-    private string bundle_tex = "bundle_tex";
+    private string bundle_assets = "bundle_assets";
 
     private AssetBundle myLoadedAssetBundle = null;
 
-    void LoadTextureBundle()
+    void LoadAssetsBundle()
     {
         string path = Path.Combine(Application.dataPath, bundleFolderName);
-        path = Path.Combine(path, bundle_tex);
+        path = Path.Combine(path, bundle_assets);
         myLoadedAssetBundle = AssetBundle.LoadFromFile(path);
 
         if (null == myLoadedAssetBundle)
