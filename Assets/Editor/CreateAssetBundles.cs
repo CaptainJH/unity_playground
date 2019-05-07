@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEditor.IMGUI.Controls;
@@ -30,7 +31,19 @@ public class CreateAssetBundles
         }
 
         var depAssets = GetAssetsDependencies(obj);
-        Selection.objects = depAssets.ToArray();
+        var result = depAssets.Where(o => o is Mesh).ToArray();
+        List<Object> fbxFiles = new List<Object>();
+        foreach(var o in result)
+        {
+            string p = AssetDatabase.GetAssetPath(o);
+            var file = AssetDatabase.LoadMainAssetAtPath(p);
+            if (file)
+                fbxFiles.Add(file);
+            Debug.Log(p);
+        }
+        Selection.objects = fbxFiles.ToArray();
+        //Selection.objects = result;
+        //Selection.objects = depAssets.ToArray();
     }
 
     //[MenuItem("Assets/Assets Dependencies")]
