@@ -52,25 +52,12 @@ public class SceneLoader : MonoBehaviour {
 
     void LoadSceneBundle()
     {
-        sHandle = new SafeFileHandle(hHandle, true);
-        if (!sHandle.IsInvalid)
-            return;
-        sHandle = OpenFileMapping(FILE_MAP_ALL_ACCESS, false, "mmf_bundle0");
-        if (sHandle.IsInvalid)
-            return;
-        int length = 120375;
-        pBuffer = MapViewOfFile(sHandle, FILE_MAP_ALL_ACCESS, 0, 0, new UIntPtr((ulong)length));
-
-        byte[] fileContent = new byte[length];
-        Marshal.Copy(pBuffer, fileContent, 0, length);
-
-
         // (1) load asset bundle
         string path = Path.Combine(Application.dataPath, bundleFolderName);
         path = Path.Combine(path, bundleSceneName);
-        //AssetBundle myLoadedAssetBundle = AssetBundle.LoadFromFile(path);
+        AssetBundle myLoadedAssetBundle = AssetBundle.LoadFromFile(path);
         //byte[] fileContent = File.ReadAllBytes(path);
-        AssetBundle myLoadedAssetBundle = AssetBundle.LoadFromMemory(fileContent);
+        //AssetBundle myLoadedAssetBundle = AssetBundle.LoadFromMemory(fileContent);
 
         if (null == myLoadedAssetBundle)
         {
