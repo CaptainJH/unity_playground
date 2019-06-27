@@ -8,5 +8,8 @@ using UnityEngine.Timeline;
 [TrackBindingType(typeof(GameObject))]
 public class SpinControlTrack : TrackAsset
 {
-
+    public override Playable CreateTrackMixer(PlayableGraph graph, GameObject go, int inputCount)
+    {
+        return ScriptPlayable<SpinControlMixerBehaviour>.Create(graph, inputCount);
+    }
 }
