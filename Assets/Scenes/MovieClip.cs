@@ -55,7 +55,7 @@ public class MovieClip : MonoBehaviour
     {
     }
 
-    protected void UpdateMovieClip()
+    public void UpdateMovieClip()
     {
         if (!isPaused)
         {

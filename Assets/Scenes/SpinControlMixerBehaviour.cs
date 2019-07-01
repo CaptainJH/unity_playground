@@ -13,7 +13,7 @@ public class SpinControlMixerBehaviour : PlayableBehaviour
             return;
 
         Vector3 finalPosition = Vector3.zero;
-        Vector3 finalScale = Vector3.one;
+        Vector3 finalScale = Vector3.zero;
 
         int inputCount = playable.GetInputCount();
         for(int i = 0; i < inputCount; ++i)
@@ -29,7 +29,7 @@ public class SpinControlMixerBehaviour : PlayableBehaviour
         var transform = objectBinding.GetComponent<Transform>();
         if(transform)
         {
-            objectBinding.transform.position = finalPosition;
+            objectBinding.transform.localPosition = finalPosition;
             objectBinding.transform.localScale = finalScale;
         }
     }

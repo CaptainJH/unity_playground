@@ -15,10 +15,9 @@ public class MovieClipSlave : MovieClip
     // Update is called once per frame
     void Update()
     {
-        UpdateMovieClip();
     }
 
-    public void On50()
+    public void On70()
     {
         Stop();
     }

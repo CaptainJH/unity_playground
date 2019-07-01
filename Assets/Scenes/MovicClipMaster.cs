@@ -14,6 +14,14 @@ public class MovicClipMaster : MovieClip
     void Update()
     {
         UpdateMovieClip();
+
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            var childObj = transform.GetChild(i).gameObject;
+            childObj.SetActive(true);
+            var mc = childObj.GetComponentInChildren<MovieClipSlave>();
+            mc.UpdateMovieClip();
+        }
     }
 
     public void On100()
@@ -25,10 +33,13 @@ public class MovicClipMaster : MovieClip
     {
         if(Input.GetMouseButtonDown(0))
         {
-            var childObj = transform.GetChild(0).gameObject;
-            childObj.SetActive(true);
-            var mc = childObj.GetComponentInChildren<MovieClipSlave>();
-            mc.Play();
+            for (int i = 0; i < transform.childCount; ++i)
+            {
+                var childObj = transform.GetChild(i).gameObject;
+                childObj.SetActive(true);
+                var mc = childObj.GetComponentInChildren<MovieClipSlave>();
+                mc.Play();
+            }
         }
     }
 }
