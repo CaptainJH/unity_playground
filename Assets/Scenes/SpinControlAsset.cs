@@ -6,8 +6,8 @@ using UnityEngine.Timeline;
 
 public class SpinControlAsset : PlayableAsset, ITimelineClipAsset
 {
-    //public float m_speed;
     public Vector3 position;
+    public Vector3 scale;
     public Dictionary<string, object> valueTable = new Dictionary<string, object>();
 
     public ClipCaps clipCaps
@@ -20,7 +20,8 @@ public class SpinControlAsset : PlayableAsset, ITimelineClipAsset
         var playable = ScriptPlayable<SpinControlBehaviour>.Create(graph);
         var behaviour = playable.GetBehaviour();
         behaviour.position = position;
-        //behaviour.speed = m_speed;
+        behaviour.Scale = scale;
+        
 
         return playable;
     }

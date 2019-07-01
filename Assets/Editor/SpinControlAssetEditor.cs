@@ -32,5 +32,9 @@ public class SpinControlAssetEditor : Editor
         {
             m_target.position = EditorGUILayout.Vector3Field(propertyName, m_target.position);
         }
+        else if(propertyName == "Transform.Scale")
+        {
+            m_target.scale = EditorGUILayout.Vector3Field(propertyName, m_target.scale);
+        }
     }
 }

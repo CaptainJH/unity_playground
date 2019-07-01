@@ -6,8 +6,8 @@ using UnityEngine.Playables;
 
 public class SpinControlBehaviour : PlayableBehaviour
 {
-    public float speed;
     public Vector3 position;
+    public Vector3 Scale;
 
     //public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     //{   

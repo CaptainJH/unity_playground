@@ -9,13 +9,29 @@ public class MovieClip : MonoBehaviour
     public PlayableDirector timelineDirector;
     private List<MethodInfo> methods = new List<MethodInfo>();
     private bool isPaused = false;
+    private bool isReversePlay = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        timelineDirector.timeUpdateMode = DirectorUpdateMode.Manual;
+    }
 
-        var methodInfos = typeof(MovieClip).GetMethods(BindingFlags.Public | BindingFlags.Instance);
+    protected void Init()
+    {
+        timelineDirector.timeUpdateMode = DirectorUpdateMode.Manual;
+        foreach(var track in timelineDirector.playableAsset.outputs)
+        {
+            if(track.sourceObject)
+            {
+                var obj = timelineDirector.GetGenericBinding(track.sourceObject);
+                if(obj)
+                {
+                    var mc = (obj as GameObject).GetComponentInChildren<MovieClip>();
+                }
+            }
+        }
+
+        var methodInfos = this.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance);
         foreach(var method in methodInfos)
         {
             if(method.Name.StartsWith("On"))
@@ -23,11 +39,6 @@ public class MovieClip : MonoBehaviour
                 methods.Add(method);
             }
         }
-    }
-
-    public void On100()
-    {
-        Stop();
     }
 
     public int CurrentFrame
@@ -42,9 +53,20 @@ public class MovieClip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    protected void UpdateMovieClip()
+    {
         if (!isPaused)
         {
-            timelineDirector.playableGraph.Evaluate(Time.deltaTime);
+            if (isReversePlay)
+            {
+                timelineDirector.playableGraph.Evaluate(-Time.deltaTime);
+            }
+            else
+            {
+                timelineDirector.playableGraph.Evaluate(Time.deltaTime);
+            }
         }
         var t = timelineDirector.time;
 
@@ -62,6 +84,13 @@ public class MovieClip : MonoBehaviour
     public virtual void Play()
     {
         isPaused = false;
+        isReversePlay = false;
+    }
+
+    public void PlayRevese()
+    {
+        isPaused = false;
+        isReversePlay = true;
     }
 
     public virtual void Stop()
