@@ -107,4 +107,22 @@ public class MovieClip : MonoBehaviour
     {
 
     }
+
+    public List<int> GetAllFramesWithScript()
+    {
+        List<int> ret = new List<int>();
+        var methodInfos = this.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance);
+        foreach (var method in methodInfos)
+        {
+            if (method.Name.StartsWith("On"))
+            {
+                int f = int.Parse(method.Name.Replace("On", ""));
+                if(f >= 0)
+                {
+                    ret.Add(f);
+                }
+            }
+        }
+        return ret;
+    }
 }
