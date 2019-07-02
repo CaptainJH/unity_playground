@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 
 public class ForwardPlayer : MonoBehaviour
 {
+    private static string ForwardPath = "C:/Users/heqi/Documents/forward/";
     public Camera m_Camera = null;
 
     enum CustomRenderEvent
@@ -35,6 +36,8 @@ public class ForwardPlayer : MonoBehaviour
                 return;
             }
         }
+
+        SetupForwardPath(ForwardPath);
 
         var ptr = GetRenderEventFunc();
 
@@ -119,4 +122,7 @@ public class ForwardPlayer : MonoBehaviour
     // our mesh.
     [DllImport("UnityPlugin")]
     private static extern System.IntPtr GetRenderEventFunc();
+
+    [DllImport("UnityPlugin")]
+    private static extern void SetupForwardPath(string path);
 }
