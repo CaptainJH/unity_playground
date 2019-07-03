@@ -38,6 +38,12 @@ public class ForwardPlayer : MonoBehaviour
         }
 
         SetupForwardPath(ForwardPath);
+        var rt = m_Camera.targetTexture;
+        if (rt != null)
+        {
+            var nativeRTPtr = rt.GetNativeTexturePtr();
+            SetupResources(System.IntPtr.Zero, System.IntPtr.Zero, nativeRTPtr);
+        }
 
         var ptr = GetRenderEventFunc();
 
