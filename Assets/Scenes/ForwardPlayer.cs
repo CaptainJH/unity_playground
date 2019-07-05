@@ -42,7 +42,7 @@ public class ForwardPlayer : MonoBehaviour
         if (rt != null)
         {
             var nativeRTPtr = rt.GetNativeTexturePtr();
-            SetupResources(System.IntPtr.Zero, System.IntPtr.Zero, nativeRTPtr);
+            SetupResources("DefaultRT", nativeRTPtr);
         }
 
         var ptr = GetRenderEventFunc();
@@ -121,7 +121,7 @@ public class ForwardPlayer : MonoBehaviour
 
     // SetupResources and GetRenderEventFunc are the two methods found in our native rendering plugin.
     [DllImport("UnityPlugin")]
-    private static extern void SetupResources(System.IntPtr nativeIndexBuffer, System.IntPtr nativeVertexBuffer, System.IntPtr nativeTextureResource);
+    private static extern void SetupResources(string name, System.IntPtr nativeResourcePtr);
 
     // GetRenderEventFunc will return a native function pointer to our native DoRenderEvent method
     // which will ultimately intialize our native graphics state object and handle the native rendering of
