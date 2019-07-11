@@ -37,14 +37,14 @@ public class ForwardPlayer : MonoBehaviour
             }
         }
 
-        SetupForwardPath(ForwardPath);
+        PluginInitialize(ForwardPath);
         var rt = m_Camera.targetTexture;
         RenderTexture.active = rt; //critical !
         if (rt != null)
         {
             var nativeRTPtr = rt.GetNativeTexturePtr();
             Debug.Assert(nativeRTPtr != System.IntPtr.Zero);
-            //SetupResources("DefaultRT", nativeRTPtr);
+            SetupResources("DefaultRT", nativeRTPtr);
         }
 
         var ptr = GetRenderEventFunc();
@@ -132,5 +132,5 @@ public class ForwardPlayer : MonoBehaviour
     private static extern System.IntPtr GetRenderEventFunc();
 
     [DllImport("UnityPlugin")]
-    private static extern void SetupForwardPath(string path);
+    private static extern void PluginInitialize(string path);
 }
