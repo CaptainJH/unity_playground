@@ -66,7 +66,7 @@ public class ForwardPlayer : MonoBehaviour
         // we could just attach a single command buffer to our camera in the Start method.
         // However because we want our model to rotate, we need to update the matrix data in
         // the native rendering plugin.
-        m_Camera.RemoveCommandBuffer(CameraEvent.AfterForwardOpaque, cb);
+        m_Camera.RemoveCommandBuffer(CameraEvent.AfterSkybox, cb);
         cb.Release();
 
         // Don't pass the camera's projection matrix directly into the plugin.
@@ -92,7 +92,7 @@ public class ForwardPlayer : MonoBehaviour
         // our custom rendering data when the command buffer is executed on the render thread.
         //cb.IssuePluginEventAndData(GetRenderEventFunc(), (int)CustomRenderEvent.AfterForwardOpaque, nativeRenderingDataPtr);
         cb.IssuePluginEvent(GetRenderEventFunc(), (int)CustomRenderEvent.AfterForwardOpaque);
-        m_Camera.AddCommandBuffer(CameraEvent.AfterForwardOpaque, cb);
+        m_Camera.AddCommandBuffer(CameraEvent.AfterSkybox, cb);
     }
 
     // There might be a better way to do this but
